@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samyuktha Sadasivam — Marketing Portfolio</title>
+  <meta property="og:title" content="Samyuktha Sadasivam — Marketing Portfolio"/>
+  <meta property="og:description" content="Brand and content marketing professional with experience across automotive, travel, and consumer brands."/>
+  <meta property="og:image" content="https://samyukthasadasivam.github.io/headshot.jpg"/>
+  <meta property="og:url" content="https://samyukthasadasivam.github.io"/>
+  <meta property="og:type" content="website"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #7b1c1c;
+      --red-deep: #5a0f0f;
+      --cream: #f4ede0;
+      --white: #faf7f2;
+      --dark: #1a0a0a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--dark); font-family: var(--sans); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 3rem;
+      background: var(--red);
+    }
+    .nav-name { font-family: var(--serif); font-size: 0.85rem; color: var(--cream); letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,237,224,0.7); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--cream); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 56px;
+    }
+    .hero-left {
+      background: var(--red);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::before {
+      content: 'S';
+      position: absolute;
+      top: -0.1em;
+      left: -0.05em;
+      font-family: var(--serif);
+      font-size: 40vw;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .hero-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(244,237,224,0.6);
+      margin-bottom: 0.5rem;
+    }
+    .hero-tagline {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,237,224,0.8);
+      margin-bottom: 2rem;
+    }
+    .hero-contact {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(244,237,224,0.5);
+      line-height: 2;
+    }
+
+    .hero-right {
+      background: var(--cream);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(20%);
+    }
+    .hero-about {
+      padding: 2.5rem 3rem;
+      background: var(--white);
+      border-top: 3px solid var(--red);
+    }
+    .hero-about-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .hero-about p {
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: #3a2a2a;
+    }
+
+    /* SKILLS — red full bleed */
+    .skills-section {
+      background: var(--red);
+      padding: 5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .skills-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 0.9;
+      margin-bottom: 4rem;
+    }
+    .skills-scatter {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .skill-item {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(244,237,224,0.2);
+      font-family: var(--serif);
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: var(--cream);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: default;
+      transition: color 0.2s;
+    }
+    .skill-item:hover { color: rgba(244,237,224,0.5); }
+    .skill-item.offset { margin-top: 3rem; }
+    .skill-item.offset-2 { margin-top: 6rem; }
+
+    /* EXPERIENCE — white with big years */
+    .experience-section {
+      background: var(--white);
+      padding: 5rem 3rem;
+    }
+    .exp-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 0.9;
+      margin-bottom: 5rem;
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 4rem;
+      align-items: start;
+    }
+    .exp-card {}
+    .exp-year {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .exp-role-name {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+    }
+    .exp-company-name {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+    .exp-desc {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: #4a3a3a;
+    }
+
+    /* WORK — red */
+    .work-section {
+      background: var(--red-deep, #5a0f0f);
+      background: var(--red);
+      padding: 5rem 3rem;
+    }
+    .work-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 0.9;
+      margin-bottom: 4rem;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .work-card {
+      background: rgba(244,237,224,0.06);
+      padding: 3rem;
+      border: 1px solid rgba(244,237,224,0.1);
+      transition: background 0.3s;
+      cursor: default;
+    }
+    .work-card:hover { background: rgba(244,237,224,0.12); }
+    .work-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .work-number {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(244,237,224,0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .work-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(244,237,224,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .work-name {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .work-desc {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: rgba(244,237,224,0.7);
+      margin-bottom: 1.5rem;
+    }
+    .work-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chip {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid rgba(244,237,224,0.25);
+      color: rgba(244,237,224,0.6);
+    }
+    .work-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244,237,224,0.4);
+      padding-bottom: 2px;
+    }
+    .work-link:hover { border-color: var(--cream); }
+    .comic-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      height: 280px;
+    }
+    .comic-panel {
+      overflow: hidden;
+      background: #0a1929;
+    }
+    .comic-panel img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    /* REELS */
+    .reels-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .reel-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .reel-card a { text-decoration: none; display: block; }
+    .reel-thumb {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .reel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.4s;
+    }
+    .reel-card:hover .reel-thumb img { transform: scale(1.04); }
+    .reel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(90,15,15,0.9) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+    .reel-views {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,237,224,0.6);
+      margin-bottom: 0.4rem;
+    }
+    .reel-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .play-circle {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(244,237,224,0.15);
+      border: 1px solid rgba(244,237,224,0.4);
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .play-circle svg { fill: white; width: 12px; height: 12px; margin-left: 2px; }
+
+    /* TOOLBOX */
+    .toolbox-section {
+      background: var(--white);
+      padding: 5rem 3rem;
+    }
+    .toolbox-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 0.9;
+      margin-bottom: 4rem;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+    .tool-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.5rem 1rem;
+      border: 1px solid #e0d5c5;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: default;
+    }
+    .tool-item:hover { border-color: var(--red); background: #fdf8f2; }
+    .tool-icon { font-size: 1.8rem; }
+    .tool-name {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #4a3a3a;
+      font-weight: 500;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--red);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+    .contact-title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .contact-sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: rgba(244,237,224,0.6);
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+    }
+    .contact-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .contact-btn {
+      padding: 0.85rem 2.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-btn.primary { background: var(--cream); color: var(--red); }
+    .contact-btn.primary:hover { background: white; }
+    .contact-btn.ghost { border: 1px solid rgba(244,237,224,0.4); color: var(--cream); }
+    .contact-btn.ghost:hover { border-color: var(--cream); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,237,224,0.3); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 4rem 2rem 2rem; min-height: 60vw; }
+      .hero-right { min-height: 70vw; }
+      .hero-about { padding: 2rem; }
+      .skills-section, .experience-section, .work-section, .toolbox-section, .contact-section { padding: 4rem 2rem; }
+      .skills-scatter { grid-template-columns: 1fr 1fr; }
+      .exp-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card.featured { grid-template-columns: 1fr; }
+      .reels-row { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .skills-scatter { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-name" href="#">Samyuktha Sadasivam</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#toolbox">Toolbox</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="hero-name">Samyuktha<br>Sadasivam</h1>
+      <div class="hero-role">Brand &amp; Content Marketing</div>
+      <div class="hero-tagline">Consumer Insight · Campaign Strategy · Storytelling</div>
+      <div class="hero-contact">
+        samyuktha.sadasivam@gmail.com<br>
+        linkedin.com/in/samyukthasadasivam<br>
+        State College, PA
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-photo" src="headshot.jpg" alt="Samyuktha Sadasivam"/>
+      <div class="hero-about">
+        <div class="hero-about-label">About Me</div>
+        <p>I'm the person in the room who notices when something could be better: the caption that's a little too safe, the campaign that's missing a hook, the brief that's technically right but creatively flat. I'm a Penn State Economics grad who ended up in marketing because I love people just as much as I love a good insight. I've pitched comic strips to automotive engineers, produced 30 reels in 30 days, and somehow made B2B safety tech feel like something you actually want to read about. I believe great marketing doesn't just reach people. It makes them feel something. That's what I'm here to make.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <h2 class="skills-title">Skills &amp;<br>Expertise</h2>
+    <div class="skills-scatter">
+      <div class="skill-item">Brand Strategy</div>
+      <div class="skill-item offset">Content Strategy &amp; Planning</div>
+      <div class="skill-item offset-2">Influencer Marketing</div>
+      <div class="skill-item">Market Research</div>
+      <div class="skill-item">Competitive Analysis</div>
+      <div class="skill-item offset">Campaign Performance</div>
+      <div class="skill-item offset-2">Audience Segmentation</div>
+      <div class="skill-item">Social Media Strategy</div>
+      <div class="skill-item">Brand Storytelling</div>
+      <div class="skill-item offset">SEO / SEM Fundamentals</div>
+      <div class="skill-item">A/B Testing</div>
+      <div class="skill-item offset-2">KPI Reporting</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience-section" id="experience">
+    <h2 class="exp-title">Working<br>Experience</h2>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-year">2025</div>
+        <div class="exp-role-name">Marketing &amp; Communications Intern</div>
+        <div class="exp-company-name">ZF Group</div>
+        <p class="exp-desc">Developed B2B marketing collateral for ESCsmart and OnGuardMAX, translating complex technical specs into clear value propositions. Pitched a comic-strip storytelling format and developed podcast brand engagement concepts to strengthen digital visibility.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-year">2024</div>
+        <div class="exp-role-name">Marketing Intern</div>
+        <div class="exp-company-name">Pickyourtrail</div>
+        <p class="exp-desc">Coordinated the #OhYes! honeymoon advertising campaign end-to-end. Managed the PYT30in30 sprint — delivering 30 Instagram video assets in 30 days — while maintaining brand consistency and digital engagement targets.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-year">2023</div>
+        <div class="exp-role-name">Marketing Intern</div>
+        <div class="exp-company-name">Mahindra Logistics</div>
+        <p class="exp-desc">Evaluated five years of Customer Satisfaction Survey data to surface actionable marketing recommendations. Conducted competitive analysis across the transportation sector and produced case studies identifying industry gaps.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-year">2022</div>
+        <div class="exp-role-name">Sales Intern</div>
+        <div class="exp-company-name">JC Valves</div>
+        <p class="exp-desc">Audited and reorganised legacy sales databases in Excel, improving accessibility for lead generation. Developed product expertise to support the strategic sales consultative process.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-year">2024–26</div>
+        <div class="exp-role-name">Development Specialist</div>
+        <div class="exp-company-name">Penn State Lion Line</div>
+        <p class="exp-desc">Raised over $5,000 through targeted alumni outreach. Applied persuasive communication strategies in a high-volume, fast-paced fundraising environment.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-year">2026</div>
+        <div class="exp-role-name">B.S. Economics</div>
+        <div class="exp-company-name">Penn State University</div>
+        <p class="exp-desc">College of the Liberal Arts. Smeal College of Business Fundamentals Certificate. Graduating May 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work-section" id="work">
+    <h2 class="work-title">Content<br>Creation</h2>
+    <div class="work-grid">
+
+      <!-- Featured: ESCsmart -->
+      <div class="work-card featured">
+        <div>
+          <div class="work-number">01</div>
+          <div class="work-tag">B2B Content Marketing · ZF Group · 2025</div>
+          <h3 class="work-name">ESCsmart: Monsoon Truck Maneuvers</h3>
+          <p class="work-desc">A comic-strip product campaign translating ZF's Electronic Stability Control system into a narrative that fleet operators and OEM decision-makers actually want to read. Set during a monsoon driving emergency, the story delivers the product's value without a single spec sheet. A deliberate creative bet — using storytelling to cut through technical fatigue in B2B marketing.</p>
+          <div class="work-chips">
+            <span class="chip">B2B Storytelling</span>
+            <span class="chip">Content Strategy</span>
+            <span class="chip">Product Marketing</span>
+            <span class="chip">Visual Narrative</span>
+          </div>
+          <a class="work-link" href="https://www.linkedin.com/posts/cv-at-zf_adasescsmartpdf-activity-7364567167377317890-SavS" target="_blank">View on LinkedIn →</a>
+        </div>
+        <div class="comic-preview">
+          <div class="comic-panel" style="background:#0a1929; display:flex; align-items:center; justify-content:center; padding:1rem;">
+            <div style="text-align:center;">
+              <div style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:#4a9aba; line-height:1.1;">ESC<span style="color:white;">smart</span></div>
+              <div style="font-size:0.55rem; color:rgba(255,255,255,0.4); margin-top:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">Vol. 1 Monsoon</div>
+            </div>
+          </div>
+          <div class="comic-panel" style="background:#0d1f35; display:flex; align-items:center; justify-content:center;">
+            <div style="font-family:serif; font-size:2.2rem; font-weight:900; color:#c0392b; text-align:center; line-height:1; text-shadow:0 2px 12px rgba(192,57,43,0.5);">SCREE-<br>EECH!</div>
+          </div>
+          <div class="comic-panel" style="background:#0c2218; display:flex; align-items:center; justify-content:center; padding:1rem;">
+            <div style="border:1px solid rgba(255,255,255,0.15); padding:0.75rem; text-align:center;">
+              <div style="font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:#4a9a6a; margin-bottom:0.4rem;">ESCsmart</div>
+              <div style="font-size:0.7rem; color:rgba(255,255,255,0.7); font-style:italic; line-height:1.5;">"It reacted<br>better than me."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reel cards -->
+      <div class="reels-row">
+        <div class="reel-card">
+          <a href="https://www.instagram.com/reel/C-MOj2ly6iB/" target="_blank">
+            <div class="reel-thumb">
+              <img src="reel_italy.jpeg" alt="PYT30in30 Italy"/>
+              <div class="reel-overlay">
+                <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="reel-views">2,967 views · #pyt30in30</div>
+                <div class="reel-title">Italy — "Mamma Mia, ready?"</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="reel-card">
+          <a href="https://www.instagram.com/reel/C94DuG7SXHi/" target="_blank">
+            <div class="reel-thumb">
+              <img src="reel_paris.jpeg" alt="PYT30in30 Paris"/>
+              <div class="reel-overlay">
+                <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="reel-views">2,154 views · #pyt30in30</div>
+                <div class="reel-title">Paris — "Beyond the Eiffel Tower"</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-number">02</div>
+        <div class="work-tag">Digital Campaign · Pickyourtrail · 2024</div>
+        <h3 class="work-name">#pyt30in30 — 30 Reels in 30 Days</h3>
+        <p class="work-desc">Managed a high-volume content sprint delivering 30 destination reels in 30 days. Maintained visual brand consistency, production timelines, and audience engagement across every asset.</p>
+        <div class="work-chips">
+          <span class="chip">Content Sprint</span>
+          <span class="chip">Short-Form Video</span>
+          <span class="chip">Brand Consistency</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-number">03</div>
+        <div class="work-tag">Market Research · Mahindra Logistics · 2023</div>
+        <h3 class="work-name">5-Year CSAT Analysis</h3>
+        <p class="work-desc">Turned five years of Customer Satisfaction data into actionable marketing strategy recommendations, identifying service gaps and competitive opportunities in the commercial transport sector.</p>
+        <div class="work-chips">
+          <span class="chip">Data Analysis</span>
+          <span class="chip">Market Research</span>
+          <span class="chip">Strategy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLBOX -->
+  <section class="toolbox-section" id="toolbox">
+    <h2 class="toolbox-title">What's In<br>My Toolbox</h2>
+    <div class="tools-grid">
+      <div class="tool-item"><div class="tool-icon">📊</div><div class="tool-name">Google Analytics</div></div>
+      <div class="tool-item"><div class="tool-icon">🎯</div><div class="tool-name">Google Ads</div></div>
+      <div class="tool-item"><div class="tool-icon">🎨</div><div class="tool-name">Canva</div></div>
+      <div class="tool-item"><div class="tool-icon">✏️</div><div class="tool-name">Adobe Photoshop</div></div>
+      <div class="tool-item"><div class="tool-icon">🎬</div><div class="tool-name">CapCut</div></div>
+      <div class="tool-item"><div class="tool-icon">📱</div><div class="tool-name">Instagram</div></div>
+      <div class="tool-item"><div class="tool-icon">📈</div><div class="tool-name">Microsoft Excel</div></div>
+      <div class="tool-item"><div class="tool-icon">📋</div><div class="tool-name">PowerPoint</div></div>
+      <div class="tool-item"><div class="tool-icon">🐍</div><div class="tool-name">Python (Basic)</div></div>
+      <div class="tool-item"><div class="tool-icon">📧</div><div class="tool-name">G-Suite</div></div>
+      <div class="tool-item"><div class="tool-icon">🗓️</div><div class="tool-name">Meta Business Suite</div></div>
+      <div class="tool-item"><div class="tool-icon">📬</div><div class="tool-name">Mailchimp</div></div>
+      <div class="tool-item"><div class="tool-icon">🔗</div><div class="tool-name">LinkedIn Campaign Manager</div></div>
+      <div class="tool-item"><div class="tool-icon">🎵</div><div class="tool-name">TikTok</div></div>
+      <div class="tool-item"><div class="tool-icon">🔍</div><div class="tool-name">SEMrush</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h2 class="contact-title">Let's Work<br>Together.</h2>
+    <p class="contact-sub">Open to brand marketing, content strategy &amp; product marketing roles</p>
+    <div class="contact-links">
+      <a class="contact-btn primary" href="mailto:samyuktha.sadasivam@gmail.com">samyuktha.sadasivam@gmail.com</a>
+      <a class="contact-btn ghost" href="https://www.linkedin.com/in/samyukthasadasivam" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Samyuktha Sadasivam</span>
+    <span>Marketing Portfolio · 2026</span>
+  </footer>
+
+</body>
+</html>
